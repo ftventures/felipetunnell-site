@@ -331,17 +331,17 @@ footer .wrap{display:flex;justify-content:space-between;gap:12px;flex-wrap:wrap}
 <body>
 
 <nav><div class="wrap">
-  <a class="brand" href="#about"><svg class="mk2" viewBox="0 0 281 153" aria-hidden="true"><path fill="#0E1F3C" d="M0 0H180L140 40H0ZM0 56H122L82 96H40V153H0ZM145 56H185V153H145Z"/><path fill="#4B5A73" d="M197 0H281L241 40H157Z"/></svg><span class="bt"><span class="bn">Felipe Tunnell</span><span class="bs">Fractional CFO &amp; Strategic Finance</span></span></a>
+  <a class="brand" href="#services"><svg class="mk2" viewBox="0 0 281 153" aria-hidden="true"><path fill="#0E1F3C" d="M0 0H180L140 40H0ZM0 56H122L82 96H40V153H0ZM145 56H185V153H145Z"/><path fill="#4B5A73" d="M197 0H281L241 40H157Z"/></svg><span class="bt"><span class="bn">Felipe Tunnell</span><span class="bs">Fractional CFO &amp; Strategic Finance</span></span></a>
   <div class="tabs" id="tabs">
-    <a href="#about" data-view="about">About</a>
     <a href="#services" data-view="services">Fractional CFO</a>
+    <a href="#track-record" data-view="track-record">Track record</a>
     <a class="navcta" href="https://www.felipetunnell.com/call" target="_blank" rel="noopener">Book a call</a>
   </div>
 </div></nav>
 
 <!-- ABOUT -->
-<section class="view" id="about"><div class="wrap">
-  <div class="chip"><span>About</span><span>01</span></div>
+<section class="view" id="track-record"><div class="wrap">
+  <div class="chip"><span>Track record</span><span>02</span></div>
   <div class="hero">
     <div>
       <h1>Investor operator.</h1>
@@ -448,10 +448,11 @@ footer .wrap{display:flex;justify-content:space-between;gap:12px;flex-wrap:wrap}
 
 <!-- SERVICES -->
 <section class="view" id="services"><div class="wrap">
-  <div class="chip"><span>Fractional CFO</span><span>02</span></div>
+  <div class="chip"><span>Fractional CFO</span><span>01</span></div>
   <h1>Burn to profitability.<br>Fundraise to exit.</h1>
   <p class="sub">Fractional CFO for high-growth, VC- and PE-backed companies, from B2B SaaS to consumer brands.</p>
   <p class="lede">I build finance functions, sharpen commercial decision-making and help founders through fundraising, profitability and M&amp;A. Two exits as an operator, and multiple finance functions built from the ground up.</p>
+  <div class="herocta"><a class="book" href="https://www.felipetunnell.com/call" target="_blank" rel="noopener">Book a call →</a><a class="howlink" href="#track-record">Track record →</a></div>
 
   <div class="sec rv ceil">
     <h2>Most growing companies hit the same finance ceiling</h2>
@@ -605,7 +606,8 @@ footer .wrap{display:flex;justify-content:space-between;gap:12px;flex-wrap:wrap}
 
 <script>
 function show(){
-  const id=["about","services"].includes(location.hash.slice(1))?location.hash.slice(1):"about";
+  let h=location.hash.slice(1); if(h==="about")h="track-record";
+  const id=["services","track-record"].includes(h)?h:"services";
   document.querySelectorAll("section.view").forEach(s=>s.classList.toggle("on",s.id===id));
   document.querySelectorAll("#tabs a").forEach(a=>a.classList.toggle("on",a.dataset.view===id));
   window.scrollTo({top:0});
