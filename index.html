@@ -716,6 +716,40 @@ h2 em{font-family:var(--body);font-style:italic;font-weight:500;color:var(--gold
 
 footer{background:var(--navy0);color:#a9b4c7;border-top:1px solid rgba(253,248,231,.1)}
 footer a{color:#fdf8e7}
+
+/* ===== Mobile fixes ===== */
+@media(max-width:860px){
+  .hx-in{grid-template-columns:minmax(0,1fr);row-gap:36px}
+  .hx-copy,.hx2 .hx-copy{padding-top:0}
+  .hx-vis{justify-self:center;max-width:380px;margin-top:0}
+}
+@media(max-width:480px){
+  .hx-vis{max-width:none}
+  .hx-card,.hx2 .c1,.hx2 .c4{top:auto;left:auto;right:auto;bottom:auto}
+  .hx-card{padding:11px 12px}
+  .hx-card b,.hx-card b.sm{white-space:normal;overflow-wrap:anywhere}
+  .hx-card b.sm{font-size:15px}
+  .hx-card span{font-size:10px;letter-spacing:.04em}
+  .hx-stats{grid-template-columns:repeat(2,minmax(0,1fr))}
+}
+@media(max-width:700px){
+  .gt{overflow-x:clip}
+  .gt-row{align-items:start}
+  .gt-co{height:auto;padding-top:2px}
+  .gt-track{height:auto;padding:4px 0 10px;background:none}
+  .gt-bar,.gt-bar.out,.gt-bar.exit,.gt-bar.out.exit{position:relative;top:auto;bottom:auto;left:0;width:100%;min-width:0;
+    background:none!important;box-shadow:none!important;color:var(--fg);padding:18px 0 0 min(var(--a),38%);overflow:visible;transform:none;display:block}
+  .gt-bar::before{content:"";position:absolute;top:0;left:var(--a);width:var(--w);height:10px;background:var(--fg);
+    transform-origin:left;transform:scaleX(0);transition:transform .9s cubic-bezier(.2,.7,.2,1) calc(var(--k)*110ms + .2s),background .25s}
+  .rv.in .gt-bar::before{transform:none}
+  .gt-row:hover .gt-bar::before,.gt-bar:focus-visible::before{background:var(--gold)}
+  .gt-bar b,.gt-bar.out b,.gt-bar em,.gt-bar.out em,.gt-bar small{position:static;display:block;white-space:normal;opacity:1}
+  .gt-bar b,.gt-bar.out b{font-size:13.5px;color:var(--fg)}
+  .gt-bar em,.gt-bar.out em{font-size:10.5px;color:var(--muted);margin-top:2px}
+  .gt-bar small{font-family:var(--mono);font-size:10px;color:var(--muted);margin-top:1px}
+  .gt-bar.exit::after,.gt-bar.out.exit::after{writing-mode:horizontal-tb;top:0;bottom:auto;right:auto;left:calc(var(--a) + var(--w) + 4px);width:auto;height:10px;padding:0 4px;font-size:7px;line-height:10px}
+}
+@media(max-width:700px) and (prefers-reduced-motion:reduce){.gt-bar::before{transform:none}}
 </style>
 <script>document.documentElement.classList.add("js")</script>
 </head>
